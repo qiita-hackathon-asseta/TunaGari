@@ -1,6 +1,5 @@
 import TopImg from "../images/top-img.png";
 import TopImg2 from "../images/top-img2.png";
-import ScrollImg from "../images/scroll-img.jpeg";
 import MySlider from "../components/MySlider";
 
 export const Top = () => {
