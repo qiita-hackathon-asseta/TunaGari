@@ -1,21 +1,29 @@
-import React from "react";
-import Heeder from "../components/Heeder";
+import TopImg from "../images/top-img.png";
+import TopImg2 from "../images/top-img2.png";
+import ScrollImg from "../images/scroll-img.jpeg";
+import MySlider from "../components/MySlider";
 
 export const Top = () => {
   return (
-    <>
-      <Heeder />
-      <main className=" w-full flex justify-center">
-        <section className=" w-7/12 px-2 py-4 mt-4 bg-gray-400 flex flex-col items-center gap-9">
-          <div>
-            <h1 className=" mb-2">サイトロゴ</h1>
-            <p>
-              このサイトではランダムに選ばれた2つの単語から画像を生成します。ハッカソンなどの際にアイデアのきっかけを得たい際にお使いください。
-            </p>
-          </div>
-          <button className=" bg-gray-50 px-6 py-2">生成</button>
-        </section>
-      </main>
-    </>
+    <main className=" w-full flex flex-col">
+      <img src={TopImg} alt="" className=" w-full object-cover" />
+
+      <section className=" w-full mt-4 lg:mt-16 mb-8 lg:mb-24">
+        <p className=" inline-block pl-8 lg:pl-32 py-4 mb-8 bg-blue-950 text-xl lg:text-5xl font-bold text-white">
+          このような画像を生成できます。
+        </p>
+        <MySlider></MySlider>
+      </section>
+
+      <section className=" w-full relative">
+        <a
+          href=""
+          className=" p-4 rounded-lg inline-block bg-white text-2xl lg:text-5xl font-bold text-blue-950 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          画像生成へ
+        </a>
+        <img src={TopImg2} alt="" className=" w-full object-cover" />
+      </section>
+    </main>
   );
 };
