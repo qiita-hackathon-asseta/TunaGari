@@ -1,7 +1,7 @@
 // import { onRequest } from "firebase-functions/v2/https";
 // import * as logger from "firebase-functions/logger";
 import { initializeApp } from "firebase/app";
-import { helloWorld } from "./src/test/helloWorld";
+// import { helloWorld } from "./src/test/helloWorld";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,5 +16,7 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
-// test
-exports.helloWorld = helloWorld;
+// テスト
+// exports.helloWorld = helloWorld;
+
+// 本番用
