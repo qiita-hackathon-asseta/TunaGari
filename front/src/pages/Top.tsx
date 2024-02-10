@@ -16,7 +16,7 @@ export const Top = () => {
 
       <section className=" w-full relative">
         <a
-          href=""
+          href="/secret/generate"
           className=" p-4 rounded-lg inline-block bg-white text-2xl lg:text-5xl font-bold text-blue-950 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           画像生成へ
