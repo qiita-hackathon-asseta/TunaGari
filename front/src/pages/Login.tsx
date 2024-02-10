@@ -24,12 +24,25 @@ export const Login = () => {
   };
 
   return (
-    <div>
-      <h1>TunaGari</h1>
-      <GoogleLoginButton onClick={handleGoogleLogin}>
-        {/* 日本語にするならこれいる */}
-        <span style={{ fontSize: 16 }}>Googleでログイン</span>
-      </GoogleLoginButton>
+    // <div>
+    //   <h1>TunaGari</h1>
+    //   <button onClick={handleGoogleLogin} className="w-3/5 bg-red-500">
+    //     {/* 日本語にするならこれいる */}
+    //     <span style={{ fontSize: 16 }}>Googleでログイン</span>
+    //   </button>
+    // </div>
+    <div className="bg-login-bac h-[calc(100vh-4rem)] w-full bg-center object-cover">
+      <div className="flex h-full items-center justify-center">
+        <div className="w-1/5">
+          <GoogleLoginButton
+            onClick={handleGoogleLogin}
+            className="w-3/5 bg-red-500"
+          >
+            {/* 日本語にするならこれいる */}
+            <span style={{ fontSize: 16 }}>Googleでログイン</span>
+          </GoogleLoginButton>
+        </div>
+      </div>
     </div>
   );
 };
