@@ -6,7 +6,7 @@ import app from "../firebase";
 const provider = new GoogleAuthProvider();
 provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
 
-const Login = () => {
+export const Login = () => {
   const handleGoogleLogin = async () => {
     try {
       const auth = getAuth(app);
@@ -27,5 +27,3 @@ const Login = () => {
     </div>
   );
 };
-
-export default Login;

@@ -1,9 +1,9 @@
 import { User, getAuth, onAuthStateChanged } from "firebase/auth";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home";
-import Login from "./pages/Login";
+import { Login } from "./pages/Login";
 import { useEffect, useState } from "react";
 import app from "./firebase";
+import { Top } from "./pages/Top";
 
 const auth = getAuth(app);
 
@@ -20,7 +20,7 @@ export const Router = () => {
 
   return (
     <Routes>
-      <Route path='/' element={user ? <Home /> : <Login />} />
+      <Route path='/' element={user ? <Top /> : <Login />} />
     </Routes>
   );
 };
