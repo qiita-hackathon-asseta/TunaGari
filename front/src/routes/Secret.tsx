@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Top } from "../pages/Top";
 import Template from "../components/Template";
-import { User, getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import app from "../firebase";
+import Generate from "../pages/Generate";
 const auth = getAuth(app);
 
 const Secret = () => {
@@ -23,6 +24,7 @@ const Secret = () => {
     <Routes>
       <Route path="/" element={<Template />}>
         <Route path="/home" element={<Top />} />
+        <Route path="/generate" element={<Generate />} />
       </Route>
     </Routes>
   );
