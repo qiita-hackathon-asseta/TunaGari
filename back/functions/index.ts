@@ -2,6 +2,8 @@
 // import * as logger from "firebase-functions/logger";
 import { initializeApp } from "firebase/app";
 import { generateImage } from "./src/generate/generateImage";
+import { helloWorld } from "./src/test/helloWorld";
+import { saveIdea } from "./src/save/saveIdea";
 // import { helloWorld } from "./src/test/helloWorld";
 
 // Your web app's Firebase configuration
@@ -22,3 +24,4 @@ initializeApp(firebaseConfig);
 
 // 本番用
 exports.generateImage = generateImage;
+exports.saveIdea = saveIdea;
