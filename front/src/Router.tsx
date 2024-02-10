@@ -4,6 +4,7 @@ import { Login } from "./pages/Login";
 import { useEffect, useState } from "react";
 import app from "./firebase";
 import { Top } from "./pages/Top";
+import Heeder from "./components/Heeder";
 
 const auth = getAuth(app);
 
@@ -19,8 +20,11 @@ export const Router = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route path='/' element={user ? <Top /> : <Login />} />
-    </Routes>
+    <>
+      <Heeder />
+      <Routes>
+        <Route path="/" element={user ? <Top /> : <Login />} />
+      </Routes>
+    </>
   );
 };
