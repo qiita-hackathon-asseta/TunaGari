@@ -2,6 +2,7 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import app from "../firebase";
+import { GoogleLoginButton } from "react-social-login-buttons";
 
 const provider = new GoogleAuthProvider();
 provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
@@ -12,9 +13,11 @@ export const Login = () => {
       const auth = getAuth(app);
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      console.log(user);
       // resulrtがあればログイン成功
-      // Homeページに遷移する処理を書く
+      if (user) {
+        // Topeページに遷移する処理を書く
+        console.log(user);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -23,7 +26,10 @@ export const Login = () => {
   return (
     <div>
       <h1>TunaGari</h1>
-      <button onClick={handleGoogleLogin}>Googleでログイン</button>
+      <GoogleLoginButton onClick={handleGoogleLogin}>
+        {/* 日本語にするならこれいる */}
+        <span style={{ fontSize: 16 }}>Googleでログイン</span>
+      </GoogleLoginButton>
     </div>
   );
 };
