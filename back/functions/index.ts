@@ -6,6 +6,8 @@ import { helloWorld } from "./src/test/helloWorld";
 import { saveIdea } from "./src/save/saveIdea";
 // import { helloWorld } from "./src/test/helloWorld";
 
+require("dotenv").config();
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,

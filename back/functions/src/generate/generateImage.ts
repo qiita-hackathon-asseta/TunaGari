@@ -1,30 +1,39 @@
 import { onRequest } from "firebase-functions/v1/https";
+import { OpenAI } from "OpenAI";
 
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+require("dotenv").config();
 
 export const generateImage = onRequest(async (req, res) => {
-  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-
-  const firstWord = req.body.firstWord == null ? "" : req.body.firstWord;
-  const secondWord = req.body.secondWord == null ? "" : req.body.secondWord;
-  console.log(`firstWord: ${firstWord}`);
-  console.log(`secondWord: ${secondWord}`);
-
-  async function run() {
-    const prompt = "Write a story about a magic backpack.";
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    console.log(response.text);
-    return response.text();
-  }
+  const { firstWord, secondWord } = req.body;
 
   try {
-    const text = await run();
-    console.log(text);
-    res.send(text);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Error generating image!");
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+
+    // TODO: 画像枚数・サイズの指定
+    const image = await openai.images.generate({
+      model: "dall-e-2",
+      prompt: `Generage images of ${firstWord} and ${secondWord}`,
+      n: 2,
+      size: "256x256",
+    });
+    const first_image_url = image.data[0].url;
+    const second_image_url = image.data[1].url;
+
+    console.log("-------------------");
+    console.log("Generated image", first_image_url, second_image_url);
+    console.log("-------------------");
+
+    res.status(200).send({ first_image_url, second_image_url });
+  } catch (error: any) {
+    // 料金のエラー
+    if (error.code == "billing_hard_limit_reached") {
+      // TODO: サンプル画像を返す？
+      res.status(200).send(error.message);
+    } else {
+      console.error("Error generating image", error);
+      res.status(500).send("Internal Server Error");
+    }
   }
 });
