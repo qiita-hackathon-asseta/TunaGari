@@ -4,6 +4,7 @@ import { MdHome } from "react-icons/md";
 import { IoBookmarks } from "react-icons/io5";
 
 const Template = () => {
+
   return (
     <div className="flex flex-col lg:flex-row">
       <nav className=" w-full lg:w-auto lg:h-screen p-2 lg:p-4 rounded-full lg:rounded-none bg-slate-800 flex lg:flex-col justify-between z-10 fixed">
