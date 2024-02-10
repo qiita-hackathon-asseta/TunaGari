@@ -3,7 +3,7 @@ import { IoMdPerson } from "react-icons/io";
 
 const Heeder = () => {
   return (
-    <header className="w-full px-4 py-2 bg-gray-400 flex items-center justify-between">
+    <header className="w-full px-4 py-2 bg-gray-400 flex items-center justify-between h-16">
       <h1>サイトロゴ</h1>
       <div>
         <a
