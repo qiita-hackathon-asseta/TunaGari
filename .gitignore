@@ -1,1 +1,3 @@
 .tool-versions
+/back/.env
+/back/node
