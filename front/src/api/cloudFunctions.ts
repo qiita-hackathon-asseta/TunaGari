@@ -12,18 +12,12 @@ interface SaveIdeaData {
 export const saveIdea = async (data: SaveIdeaData) => {
   try {
     if (data === undefined) {
-      throw new Error("Data is undefined.");
+      throw new Error("データがありません。");
     }
 
     const functionsURL: string = process.env.REACT_APP_DEV_FUNCTIONS_URL || "";
 
-    console.log(functionsURL);
-
-    if (functionsURL === "") {
-      throw new Error("Functions URL is not defined.");
-    }
-
-    const response = await axios.post(`${functionsURL}/saveIdea` || "", data);
+    const response = await axios.post(`${functionsURL}/saveIdea`, data);
     return response.data;
   } catch (error) {
     console.error("Error:", error);
