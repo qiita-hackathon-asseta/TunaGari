@@ -16,7 +16,7 @@ const Template = () => {
             <MdHome className=" size-7 md:size-9 lg:size-10 text-gray-400" />
           </a>
           <a
-            href=""
+            href="/secret/bookmarked"
             className="w-10 md:w-14 lg:w-16 aspect-square rounded-full bg-gray-50 flex items-center justify-center"
           >
             <IoBookmarks className=" size-6 md:size-8 lg:size-9 text-gray-400" />
