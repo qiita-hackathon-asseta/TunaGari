@@ -5,10 +5,10 @@ export const TestSaveData = () => {
   const handleSaveIdea = async () => {
     try {
       const data = {
-        uid: "yourUserId", //TODO:ユーザーIDは適切な方法で取得してください
-        word1: "First Word",
-        word2: "Second Word",
-        generatedImageURLs: [
+        userId: "yourUserId", //TODO:ユーザーIDは適切な方法で取得してください
+        firstWord: "First Word",
+        secondWord: "Second Word",
+        urls: [
           "https://example.com/image1.jpg",
           "https://example.com/image2.jpg",
         ],

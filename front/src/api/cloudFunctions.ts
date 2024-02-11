@@ -2,10 +2,10 @@
 import axios from "axios";
 
 interface SaveIdeaData {
-  uid: string;
-  word1: string;
-  word2: string;
-  generatedImageURLs: string[];
+  userId: string;
+  firstWord: string;
+  secondWord: string;
+  urls: string[];
   memo: string;
 }
 
