@@ -1,24 +1,29 @@
 import { IoBookmark } from "react-icons/io5";
 import TestImg from "../images/scroll-img.jpeg";
+import ScrollImg1 from "../images/demo-img1.jpeg";
+import ScrollImg2 from "../images/demo-img2.jpeg";
+import ScrollImg3 from "../images/demo-img3.jpeg";
+import ScrollImg4 from "../images/demo-img4.jpeg";
+import ScrollImg5 from "../images/demo-img5.jpeg";
 
 const map = [
   {
-    urls: [TestImg, TestImg],
-    firstWord: "word1",
+    urls: [TestImg, ScrollImg1],
+    firstWord: "ツナ",
     memo: "memo1",
-    secondWord: "word2",
+    secondWord: "ガリ",
   },
   {
-    urls: [TestImg, TestImg],
-    firstWord: "word3",
-    memo: "memo2",
-    secondWord: "word4",
+    urls: [ScrollImg3, ScrollImg4],
+    firstWord: "ツナ",
+    memo: "memo1",
+    secondWord: "ガリ",
   },
   {
-    urls: [TestImg, TestImg, TestImg],
-    firstWord: "word3",
-    memo: "memo2",
-    secondWord: "word4",
+    urls: [ScrollImg2, ScrollImg5, TestImg],
+    firstWord: "ツナ",
+    memo: "memo1",
+    secondWord: "ガリ",
   },
 ];
 
@@ -47,10 +52,10 @@ const BookMark = () => {
                     </p>
                   </div>
                   <div className="">
-                    <IoBookmark className={` size-8 ${false ? "text-red-500" : "text-gray-400"} `} />
+                    <IoBookmark className={` size-8 ${true ? "text-red-500" : "text-gray-400"} `} />
                   </div>
                 </div>
-                <textarea name="" id="" className=" p-2 row-span-6" placeholder="メモしてね！" readOnly></textarea>
+                <textarea name="" id="" className=" p-2 row-span-6" placeholder="メモしてね！" readOnly>{value.memo}</textarea>
               </div>
             </div>
           ))}
