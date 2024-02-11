@@ -1,22 +1,20 @@
 import { https } from "firebase-functions";
 
-const admin = require("firebase-admin");
+const { admin } = require("../firebaseAdmin");
 
 export const saveIdea = https.onRequest(async (req, res) => {
-  admin.initializeApp();
-
   try {
     // リクエストから必要な情報を取得
-    const { uid, word1, word2, generatedImageURLs, memo } = req.body;
+    const { userId, firstWord, secondWord, urls, memo } = req.body;
 
     // Firestoreにアクセスするためのユーザーの参照
-    const userRef = admin.firestore().collection("users").doc(uid);
+    const userRef = admin.firestore().collection("users").doc(userId);
 
     // アイデアのサブコレクションに新しいドキュメントを追加
     const ideaRef = await userRef.collection("ideas").add({
-      word1: word1,
-      word2: word2,
-      generatedImageURLs: generatedImageURLs,
+      firstWord: firstWord,
+      secondWord: secondWord,
+      urls: urls,
       memo: memo,
     });
 

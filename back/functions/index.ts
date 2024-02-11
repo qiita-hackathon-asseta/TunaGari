@@ -1,9 +1,9 @@
 // import { onRequest } from "firebase-functions/v2/https";
 // import * as logger from "firebase-functions/logger";
 import { initializeApp } from "firebase/app";
-import { generateImage } from "./src/generate/generateImage";
-import { helloWorld } from "./src/test/helloWorld";
+import { wordToImage } from "./src/generate/wordToImage";
 import { saveIdea } from "./src/save/saveIdea";
+import { getAllIdeas } from "./src/get/getAllIdeas";
 // import { helloWorld } from "./src/test/helloWorld";
 
 require("dotenv").config();
@@ -22,8 +22,9 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 // テスト
-// exports.helloWorld = helloWorld;
+exports.helloWorld = helloWorld;
 
 // 本番用
-exports.generateImage = generateImage;
+exports.wordToImage = wordToImage;
 exports.saveIdea = saveIdea;
+exports.getAllIdeas = getAllIdeas;
