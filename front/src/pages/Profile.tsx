@@ -16,7 +16,7 @@ const Profile = () => {
   return (
     <main className='w-full py-8 min-h-screen bg-indigo-950'>
       <h1 className='w-11/12 lg:w-4/5 pb-2 mt-12 lg:mt-0 mx-auto text-xl lg:text-4xl font-semibold text-white border-b-4 border-white'>
-        マイプロフィールa
+        マイプロフィール
       </h1>
 
       <section className='w-11/12 lg:w-4/5 p-4 mt-2 mx-auto flex flex-col items-start gap-12'>
