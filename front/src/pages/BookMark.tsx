@@ -38,6 +38,7 @@ const BookMark = () => {
                 id=""
                 className=" p-2 row-span-6"
                 placeholder="メモしてね！"
+                readOnly
               ></textarea>
             </div>
           </div>
@@ -70,6 +71,7 @@ const BookMark = () => {
                 id=""
                 className=" p-2 row-span-6"
                 placeholder="メモしてね！"
+                readOnly
               ></textarea>
             </div>
           </div>
