@@ -24,7 +24,7 @@ const Template = () => {
         </div>
 
         <a
-          href=""
+          href="/secret/profile"
           className="w-10 md:w-14 lg:w-16 aspect-square rounded-full bg-gray-50 flex items-center justify-center"
         >
           <IoMdPerson className=" size-7 md:size-9 lg:size-10 text-gray-400" />
