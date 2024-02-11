@@ -5,9 +5,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         "login-bac": "url('img/bac.png')",
+        "main-background": "url('img/background.png')",
       },
     },
   },
   plugins: [],
 };
-

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import app from "./firebase";
 import { Top } from "./pages/Top";
 import Heeder from "./components/Heeder";
+import { BookMark } from "./pages/BookMark";
 
 const auth = getAuth(app);
 
@@ -24,6 +25,7 @@ export const Router = () => {
       <Heeder />
       <Routes>
         <Route path="/" element={user ? <Top /> : <Login />} />
+        <Route path="/BookMark" element={user ? <Top /> : <BookMark />} />
       </Routes>
     </>
   );
