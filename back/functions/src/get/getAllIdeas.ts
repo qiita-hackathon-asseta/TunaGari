@@ -2,9 +2,9 @@ import { https } from "firebase-functions";
 
 const admin = require("firebase-admin");
 
-admin.initializeApp();
-
 export const getAllIdeas = https.onRequest(async (req, res) => {
+  admin.initializeApp();
+
   try {
     const userId = req.query.userId;
 

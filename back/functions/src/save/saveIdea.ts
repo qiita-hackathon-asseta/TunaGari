@@ -1,9 +1,10 @@
 import { https } from "firebase-functions";
 
 const admin = require("firebase-admin");
-admin.initializeApp();
 
 export const saveIdea = https.onRequest(async (req, res) => {
+  admin.initializeApp();
+
   try {
     // リクエストから必要な情報を取得
     const { uid, word1, word2, generatedImageURLs, memo } = req.body;
